@@ -7,6 +7,8 @@
     tools:context=".Activity.MainActivity">
 
 
+
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="102dp"
@@ -56,13 +58,27 @@
         app:layout_constraintTop_toBottomOf="@+id/recview" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="409dp"
-        android:layout_height="437dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:id="@+id/second_recycler"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation" />
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

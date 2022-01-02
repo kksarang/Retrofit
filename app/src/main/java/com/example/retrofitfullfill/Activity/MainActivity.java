@@ -26,11 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView1, recyclerView2;
     private ApiInterface myApi;
-
     private  static final String url="https://futursity.com/course/api/";
-
     private ArrayList<ModelClass> modelArrayList;
-
     private ArrayList<CategoryModel> categoryModels;
 
 
@@ -39,28 +36,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView1=findViewById(R.id.recview);
+        recyclerView1 = findViewById(R.id.recview);
+        recyclerView2 = findViewById(R.id.second_recycler);
 
-        recyclerView2=findViewById(R.id.second_recycler);
-
-
-
-        modelArrayList=new ArrayList<>();
-
-        categoryModels= new ArrayList<>();
-
-
-
+        modelArrayList = new ArrayList<>();
+        categoryModels = new ArrayList<>();
         viewJsonData();
-
     }
-
     private void viewJsonData() {
-
-
         Retrofit retrofit = new Retrofit.Builder().baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create()).build();
-
 
         myApi = retrofit.create(ApiInterface.class);
 
@@ -81,17 +66,12 @@ public class MainActivity extends AppCompatActivity {
 
                     LinearLayoutManager linearLayoutManager=new LinearLayoutManager(MainActivity.this,
                                          recyclerView1.HORIZONTAL,false);
-
                     recyclerView1.setLayoutManager(linearLayoutManager);
-
                     recyclerView1.setAdapter(myAdapter);
-
                     recyclerView1.setHasFixedSize(true);
                 }}
-
-            @Override
+                @Override
             public void onFailure(Call<ArrayList<ModelClass>> call, Throwable t) {
-
             }
         });
 
